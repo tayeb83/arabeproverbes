@@ -1,0 +1,27 @@
+<h1><%= mesg_bienvenue %></h1>
+
+<table>
+  <tr>
+    <th>Identifiant</th>
+    <th>Corps</th>
+    <th>Description</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @proverbes.each do |proverbe| %>
+  <tr>
+    <td><%= proverbe.identifiant %></td>
+    <td><%= proverbe.Corps %></td>
+    <td><%= proverbe.Description %></td>
+    <td><%= link_to 'Show', proverbe %></td>
+    <td><%= link_to 'Edit', edit_proverbe_path(proverbe) %></td>
+    <td><%= link_to 'Destroy', proverbe, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Proverbe', new_proverbe_path %>

@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Identifiant:</b>
+  <%= @proverbe.Identifiant %>
+</p>
+
+<p>
+  <b>Corps:</b>
+  <%= @proverbe.Corps %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @proverbe.Description %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @proverbe.user_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_proverbe_path(@proverbe) %> |
+<%= link_to 'Back', proverbes_path %>
