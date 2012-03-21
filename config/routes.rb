@@ -1,4 +1,16 @@
 Arabproverbe::Application.routes.draw do
+  get "pages/terms"
+
+  get "pages/help"
+
+  get "pages/about"
+
+  get "pages/privacy"
+
+  get "pages/home"
+
+  get "pages/contact"
+
   resources :users
 
   resources :proverbes
