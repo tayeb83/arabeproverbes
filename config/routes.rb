@@ -1,4 +1,6 @@
 Arabproverbe::Application.routes.draw do
+  get "sessions/new"
+
   get "pages/terms"
 
   get "pages/help"
@@ -13,7 +15,29 @@ Arabproverbe::Application.routes.draw do
 
   resources :users
 
-  resources :proverbes
+  resources :proverbes, :only=> [:create, :destroy]
+
+  resources :sessions	
+
+
+
+ get "log_out" => "sessions#destroy", :as => "log_out"
+ get "log_in" => "sessions#new", :as => "log_in"
+ get "sign_up" => "users#new", :as => "sign_up"
+
+
+  match '/signup',  :to => 'users#new'
+  match '/signin',  :to => 'sessions#new'
+  match '/signout', :to => 'sessions#destroy', :via=> :delete
+    
+
+
+ match '/signup', :to => 'users#new'
+ match '/contact', :to => 'pages#contact'
+ match '/about', :to => 'pages#about'
+ match '/help', :to => 'pages#help'
+
+ root :to => 'pages#home'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

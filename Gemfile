@@ -1,6 +1,19 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.1'
+gem "rails-i18n", "0.1.8"
+
+gem "bcrypt-ruby", :require => "bcrypt"
+
+gem 'bootstrap-sass', '2.0.0'
+
+gem 'faker', '1.0.1'
+
+gem 'will_paginate', '3.0.3'
+gem 'will-paginate-i18n'
+gem 'will_paginate_renderers'
+
+gem 'bootstrap-will_paginate', '0.0.5'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -11,7 +24,7 @@ group :development, :test do
   gem 'execjs'
   gem 'therubyracer'	
   gem 'annotate', '~> 2.4.1.beta'
-  gem 'bcrypt-ruby', '3.0.1'
+  
 end
 
 

@@ -1,34 +1,20 @@
-
 <!DOCTYPE html>
 <html>
   <head>
-    <title> بوابة الأمثال و الحكم</title>
-    <%= stylesheet_link_tag "application", :media => "all" %>
+    <title>بوابة الأمثال و الحكم</title>
+    <%= stylesheet_link_tag    "application", :media=> "all" %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
-    <!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+    <%= render 'layouts/shim' %>    
   </head>
-  <body  style="direction: rtl">
-    <header class="navbar navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-         <% flash.each do |key, value| %>
-        <div class="alert alert-<%= key %>"><%= value %></div>
-      	 <% end %>
-          <nav>
-            <ul class="nav pull-right">
-             <li><%= link_to "تسجيل الدخول", '#' %></li>
-	     <li><%= link_to "المساعدة", '#' %></li>
-             <li><%= link_to "الرئيسية", '#' %></li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-    </header>
+    <body  style="direction: rtl">
+    <%= render 'layouts/header' %>
     <div class="container">
+      <% flash.each do |key, value| %>
+        <div class="alert alert-<%= key %>"><%= value %></div>
+      <% end %>
       <%= yield %>
+      <%= render 'layouts/footer' %>
     </div>
   </body>
 </html>

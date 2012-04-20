@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title><%= @title %></title>
+</head>
+<body>
+
+<% if signed_in? %>
+  <div class="row">
+    <aside class="span4">
+      <section>
+        <%= render 'shared/user_info' %>
+      </section>
+      <section>
+        <%= render 'shared/proverbe_form' %>
+      </section>
+    </aside>
+
+  	<div class="span8">
+      <h3>Proverbe Feed</h3>
+      <%= render 'shared/feed' %>
+    </div>
+  </div>  
+<% else %>
+<h1 >مرحبا بكم في بوابة الأمثال و الحكم</h1>
+<h3>
+<p style="direction: rtl">
+بوابة الأمثال و الحكم عبارة عن مساحة تبادل بين الناس من أجل نشر و تقاسم الكثير من الأمثال و الحكم العربية و بجميع اللهجات.
+</p>
+</h3>
+
+ <div id="user_nav">
+  <% if current_user %>
+    
+    <ul class="nav pull-left">
+    <li><%= current_user.email %></li>	
+    <li><%= link_to "الخروج", log_out_path %></li>	
+    </ul>	    
+
+    
+  <% else %>
+    <%= link_to "سجل دخولك هنا", sign_up_path, :class => "btn btn-large btn-primary" %> أو
+    <%= link_to "الدخول", log_in_path, :class => "btn btn-large btn-primary"%>
+  <% end %>
+</div>
+
+<% flash.each do |name, msg| %>
+  <%= content_tag :div, msg, :id => "flash_#{name}" %>
+<% end %>
+<% end %> 
+
+</body>
+</html>

@@ -1,4 +1,7 @@
 class ProverbesController < ApplicationController
+      before_filter :signed_in_user
+      before_filter :correct_user,   :only=> :destroy
+   
   # GET /proverbes
   # GET /proverbes.json
   def index
@@ -39,19 +42,20 @@ class ProverbesController < ApplicationController
 
   # POST /proverbes
   # POST /proverbes.json
-  def create
-    @proverbe = Proverbe.new(params[:proverbe])
 
-    respond_to do |format|
-      if @proverbe.save
-        format.html { redirect_to @proverbe, :notice => 'Proverbe was successfully created.' }
-        format.json { render :json => @proverbe, :status => :created, :location => @proverbe }
-      else
-        format.html { render :action => "new" }
-        format.json { render :json => @proverbe.errors, :status => :unprocessable_entity }
-      end
+
+  def create
+    @proverbe =  current_user.proverbes.build(params[:proverbe])
+	
+    if @proverbe.save
+      flash[:success] = "تم انشاء المثل"
+      redirect_to root_path
+    else
+       @feed_items = []
+      render 'static_pages/home'
     end
   end
+
 
   # PUT /proverbes/1
   # PUT /proverbes/1.json
@@ -72,12 +76,21 @@ class ProverbesController < ApplicationController
   # DELETE /proverbes/1
   # DELETE /proverbes/1.json
   def destroy
-    @proverbe = Proverbe.find(params[:id])
     @proverbe.destroy
-
-    respond_to do |format|
-      format.html { redirect_to proverbes_url }
-      format.json { head :no_content }
-    end
+    redirect_back_or root_path
   end
+
+private
+   def signed_in_user
+      unless signed_in?
+        store_location
+        redirect_to log_in_path, :notice=> "Please sign in."
+      end
+    end
+
+ def correct_user
+      @proverbe = current_user.proverbes.find_by_id(params[:id])
+      redirect_to root_path if @proverbe.nil?
+    end
+
 end

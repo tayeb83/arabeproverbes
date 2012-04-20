@@ -1,0 +1,4 @@
+:ar
+  will_paginate:
+    previous: "Precedant"
+    next: "suivant"

@@ -1,10 +1,12 @@
 class PagesController < ApplicationController
   def home
-  @title = ""
+  @title = "الرئيسية"
+  @proverbe = current_user.proverbes.build if signed_in?
+  @feed_items = current_user.feed.paginate(:page=> params[:page])
   end
 
   def contact
-  @title = ""
+  @title = "اتصل بنا"
   end
 
   def terms
@@ -12,10 +14,11 @@ class PagesController < ApplicationController
   end
 
   def help
-  @title = ""	
+  @title = "مساعدة"	
   end
 
   def about
+ @title = "عنا"
   end
 
   def privacy

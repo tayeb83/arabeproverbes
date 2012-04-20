@@ -1,0 +1,4 @@
+:fr
+  will_paginate:
+    previous: "Precedant"
+    next: "suivant"

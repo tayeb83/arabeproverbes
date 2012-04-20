@@ -1,0 +1,12 @@
+<a href="<%= user_path(current_user) %>">
+
+</a>
+<h1>
+  <%= current_user.name %>
+</h1>
+<span>
+  <%= link_to "الصفحة الشخصية", current_user %>
+</span>
+<span>
+  <%= pluralize(current_user.proverbes.count, "عدد الأمثال و الحكم") %>
+</span>

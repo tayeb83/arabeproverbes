@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<div class="row">
+  <aside class="span4">
+    <section>
+      <h1>
+        <%= gravatar_for @user %>
+        <%= @user.name %>
+      </h1>
+    </section>
+  </aside>
+  <div class="span8">
+    <% if @user.proverbes.any? %>
+      <h3> الأمثال (<%= @user.proverbes.count %>)</h3>
+      <ol class="microposts">
+        <%= render @proverbes %>
+      </ol>
+      <%= will_paginate @proverbes %>
+    <% end %>
+  </div>
+
+
+</div>
+<%= link_to 'تحديث', edit_user_path(@user) %> |
+<%= link_to 'الرجوع', users_path %>

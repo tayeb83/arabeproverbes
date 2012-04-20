@@ -1,15 +1,25 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
-  <%= @user.name %>
-</p>
+<div class="row">
+  <aside class="span4">
+    <section>
+      <h1>
+        <%= gravatar_for @user %>
+        <%= @user.name %>
+      </h1>
+    </section>
+  </aside>
+  <div class="span8">
+    <% if @user.proverbes.any? %>
+      <h3>  (<%= @user.proverbes.count %>) الأمثال</h3>
+      <ol class="microposts">
+        <%= render @proverbes %>
+      </ol>
+      <%= will_paginate @proverbes %>
+    <% end %>
+  </div>
 
-<p>
-  <b>Email:</b>
-  <%= @user.email %>
-</p>
 
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+</div>
+<%= link_to 'تحديث', edit_user_path(@user) %> |
+<%= link_to 'الرجوع', users_path %>
