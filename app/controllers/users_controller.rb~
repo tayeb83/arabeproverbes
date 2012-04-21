@@ -48,7 +48,7 @@ class UsersController < ApplicationController
     redirect_to users_path
   end
 
-
+private
    def signed_in_user
       unless signed_in?
         store_location

@@ -89,7 +89,7 @@ private
     end
 
  def correct_user
-      @proverbe = current_user.microposts.find_by_id(params[:id])
+      @proverbe = current_user.proverbes.find_by_id(params[:id])
       redirect_to root_path if @proverbe.nil?
     end
 
