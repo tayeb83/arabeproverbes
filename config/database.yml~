@@ -2,7 +2,7 @@
 #   gem install sqlite3
 #
 #   Ensure the SQLite 3 gem is defined in your Gemfile
-  gem 'mysql2'
+#  gem 'mysql2'
 development:
   adapter: mysql2
   database: arabproverbedb

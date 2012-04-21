@@ -20,7 +20,7 @@ test:
   password: imran09
 
 production:
-  adapter: mysql2
+  adapter: pg
   database: arabproverbedb
   username: root
   password: imran09
