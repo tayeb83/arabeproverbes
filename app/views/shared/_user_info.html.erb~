@@ -8,5 +8,5 @@
   <%= link_to "الصفحة الشخصية", current_user %>
 </span>
 <span>
-  <%= pluralize(current_user.proverbes.count, "proverbe") %>
+  عدد الأمثال و الحكم" <%= current_user.proverbes.count%>  
 </span>
