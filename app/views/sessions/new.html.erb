@@ -1,6 +1,6 @@
 <h1>تسجيل الدخول</h1>
-
-<%= form_tag sessions_path do %>
+ <div class="well form-inline">
+  <%= form_for(:session, :url=> sessions_path) do |f| %>
   <p>
     <%= label_tag :"اسم المستخدم" %><br />
     <%= text_field_tag :email, params[:email] %>
@@ -11,6 +11,6 @@
   </p>
   <p class="btn btn-large btn-primary"><%= submit_tag "تسجيل الدخول" %></p>
 <% end %>
+<p>مستخدم جديد؟ <%= link_to "سجل نفسك الآن!", signup_path %></p>
 
-
-
+</div>

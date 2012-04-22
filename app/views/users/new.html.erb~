@@ -2,9 +2,9 @@
 <%= provide(:title, 'انشاء حساب') %>
 <h1>تسجيل الدخول</h1>
 
-
+<div class="well form-inline">
 <%= form_for @user do |f| %>
-    <%= render 'shared/error_messages', object: f.object %>
+    <%= render 'shared/error_messages', :object=> f.object %>
 <div id="wrapper">
 <div id="login" class="animate form">
   <p>
