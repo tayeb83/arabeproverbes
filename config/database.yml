@@ -8,6 +8,7 @@ development:
   database: arabproverbedb
   username: root
   password: imran09
+  encoding: utf8
   
 
 # Warning: The database defined as "test" will be erased and
@@ -19,8 +20,10 @@ test:
   username: root
   password: imran09
 
+
 production:
   adapter: pg
   database: arabproverbedb
   username: root
   password: imran09
+  encoding: utf8

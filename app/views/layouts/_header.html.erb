@@ -3,14 +3,16 @@
     <div class="container">
       
       <nav>
+      <a class="brand" href="#pages/home">بوابة الأمثال و الحكم</a> 
         <ul class="nav pull-right">
+          <li><%= link_to "المساعدة", help_path %></li>
          <li><%= link_to "تسجيل الدخول", signin_path %></li>
-	     <li><%= link_to "المساعدة", help_path %></li>
-             <li><%= link_to "الرئيسية", root_path %></li>
+	
+             
        <% if signed_in? %>
             <li><%= link_to "المستخدمين", users_path %></li>
             <li id="fat-menu" class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">الحساب <b class="caret"></b>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%=current_user.name%> <b class="caret"></b>
               </a>
               <ul class="dropdown-menu">
                 <li><%= link_to "الحساب الشخصي", current_user %></li>
@@ -24,6 +26,7 @@
           <% else %>
             <li><%= link_to "الدخول", log_in_path %></li>
           <% end %>
+        
         </ul>
       </nav>
     </div>
