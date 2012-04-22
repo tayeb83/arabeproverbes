@@ -1,4 +1,3 @@
-# encoding: utf-8
 <p id="notice"><%= notice %></p>
 
 <div class="row">
@@ -12,7 +11,7 @@
   </aside>
   <div class="span8">
     <% if @user.proverbes.any? %>
-      <h3>  (<%= @user.proverbes.count %>) الأمثال</h3>
+      <h3> الأمثال   (<%= @user.proverbes.count %>)</h3>
       <ol class="microposts">
         <%= render @proverbes %>
       </ol>

@@ -285,6 +285,7 @@ aside {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
+  background-color: #006dcc;
 }
 .btn-large .icon {
   margin-top: 1px;
@@ -444,6 +445,7 @@ aside {
 button.btn, input[type="submit"].btn {
   *padding-top: 2px;
   *padding-bottom: 2px;
+  
 }
 button.btn::-moz-focus-inner, input[type="submit"].btn::-moz-focus-inner {
   padding: 0;
@@ -452,6 +454,7 @@ button.btn::-moz-focus-inner, input[type="submit"].btn::-moz-focus-inner {
 button.btn.large, input[type="submit"].btn.large {
   *padding-top: 7px;
   *padding-bottom: 7px;
+   
 }
 button.btn.small, input[type="submit"].btn.small {
   *padding-top: 3px;
