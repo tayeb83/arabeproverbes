@@ -1,27 +1,29 @@
-<h1><%= mesg_bienvenue %></h1>
+<h1>جميع المستخدمبن</h1>
 
-<table>
-  <tr>
-    <th>Identifiant</th>
-    <th>Corps</th>
-    <th>Description</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<%= will_paginate :previous_label => 'السابق', :next_label => 'التالي', :class => 'pager' %>
 
-<% @proverbes.each do |proverbe| %>
-  <tr>
-    <td><%= proverbe.identifiant %></td>
-    <td><%= proverbe.Corps %></td>
-    <td><%= proverbe.Description %></td>
-    <td><%= link_to 'Show', proverbe %></td>
-    <td><%= link_to 'Edit', edit_proverbe_path(proverbe) %></td>
-    <td><%= link_to 'Destroy', proverbe, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
+<ul class="users">
+  <% @proverbes.each do |proverbe| %>
+    <li>
+      
+        <span class="user">
+    		<%= link_to proverbe.user.name %>
+        </span>
+    <span class="corps"><%= proverbe.Corps %></span>
+  <span class="timestamp">
+    أرسل من حوالي <%= time_ago_in_words(feed_item.created_at)%>.
+  </span>
+  <% if current_user?(proverbe.user) %>
+    <%= link_to "حذف", proverbe, :method =>  :delete,
+                                     :confirm=> "هل أنت متأكد",
+                                     :title=>    proverbe.Corps %>
 
-<br />
 
-<%= link_to 'New Proverbe', new_proverbe_path %>
+   <%= link_to "تحديث المثل", edit_proverbe_path(proverbe) %>
+  <% end %>
+	
+    </li>
+  <% end %>
+</ul>
+
+<%= will_paginate :previous_label => 'السابق', :next_label => 'التالي' , :class => 'pager'%>

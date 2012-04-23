@@ -11,6 +11,9 @@
     <%= link_to "حذف", feed_item, :method =>  :delete,
                                      :confirm=> "هل أنت متأكد",
                                      :title=>    feed_item.Corps %>
+
+
+   <%= link_to "تحديث المثل", edit_proverbe_path(feed_item) %>
   <% end %>
 
 </li>

@@ -1,10 +1,10 @@
 <li>
   <span class="corps"><%= proverbe.Corps %></span>
   <span class="timestamp">
-     أرسل من حوالي <%= time_ago_in_words(proverbe.created_at) %> .
+     أرسل من حوالي <%= time_ago_in_words(proverbe.created_at) %> 
   </span>
   <% if current_user?(proverbe.user) %>
-    <%= link_to "حذف", proverbe, :method => :delete,
+    <%= link_to "حذف", proverbe, :method => :destroy,
                                      :confirm=> "هل أنت متأكد",
                                      :title=>   proverbe.Corps %>
   <% end %>

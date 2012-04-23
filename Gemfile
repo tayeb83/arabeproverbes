@@ -2,7 +2,6 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.1'
 gem "rails-i18n", "0.1.8"
-
 gem "bcrypt-ruby", :require => "bcrypt"
 
 gem 'bootstrap-sass', '2.0.0'

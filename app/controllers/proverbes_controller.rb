@@ -1,12 +1,13 @@
 # encoding: UTF-8
 class ProverbesController < ApplicationController
       before_filter :signed_in_user
-      before_filter :correct_user,   :only=> :destroy
+      before_filter :correct_user,   :only=> [:destroy,:edit, :update]
    
   # GET /proverbes
   # GET /proverbes.json
   def index
-    @proverbes = Proverbe.all
+     #@proverbes = Proverbe.all
+     @proverbes = Proverbe.paginate(:page=> params[:page])
 
     respond_to do |format|
       format.html # index.html.erb
@@ -47,7 +48,7 @@ class ProverbesController < ApplicationController
 
   def create
     @proverbe =  current_user.proverbes.build(params[:proverbe])
-	
+
     if @proverbe.save
       flash[:success] = "تم انشاء المثل"
       redirect_to root_path
@@ -65,7 +66,7 @@ class ProverbesController < ApplicationController
 
     respond_to do |format|
       if @proverbe.update_attributes(params[:proverbe])
-        format.html { redirect_to @proverbe, :notice => 'Proverbe was successfully updated.' }
+        format.html { redirect_to @proverbe, :notice => 'تم تحديث المثل' }
         format.json { head :no_content }
       else
         format.html { render :action => "edit" }
@@ -95,3 +96,4 @@ private
     end
 
 end
+

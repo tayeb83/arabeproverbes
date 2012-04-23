@@ -15,7 +15,7 @@ Arabproverbe::Application.routes.draw do
 
   resources :users
 
-  resources :proverbes, only: [:create, :destroy]
+  resources :proverbes, :only=> [:create, :destroy]
 
   resources :sessions	
 

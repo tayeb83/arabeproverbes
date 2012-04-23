@@ -7,4 +7,4 @@
 
 
 <%= link_to 'تحديث', edit_proverbe_path(@proverbe) %> |
-<%= link_to 'الرجوع', root_path %>
+<%= link_to 'الرجوع', proverbes_path %>
