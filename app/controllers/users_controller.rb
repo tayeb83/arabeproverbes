@@ -1,10 +1,11 @@
 # encoding: UTF-8
 class UsersController < ApplicationController
-  before_filter :signed_in_user, :only=> [:edit, :update]   
+ before_filter :signed_in_user, 
+                :only=> [:index, :edit, :update, :destroy, :following, :followers]
   before_filter :correct_user,   :only=> [:edit, :update]
   before_filter :admin_user,     :only=> :destroy
   
-
+  
   def new
   @user = User.new
   end
@@ -48,6 +49,22 @@ class UsersController < ApplicationController
     flash[:success] = "User destroyed."
     redirect_to users_path
   end
+
+ def following
+    @titre = "المُتابَعون"
+    @user = User.find(params[:id])
+    @users = @user.following.paginate(:page => params[:page])
+    render 'show_follow'
+  end
+
+  def followers
+    @titre = "المتابِعون"
+    @user = User.find(params[:id])
+    @users = @user.followers.paginate(:page => params[:page])
+    render 'show_follow'
+  end
+
+  
 
 private
    def signed_in_user

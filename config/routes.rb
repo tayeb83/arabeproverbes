@@ -15,9 +15,17 @@ Arabproverbe::Application.routes.draw do
 
   resources :users
 
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
+
   resources :proverbes
 
   resources :sessions	
+
+  resources :relationships, :only=> [:create, :destroy]
 
 
 

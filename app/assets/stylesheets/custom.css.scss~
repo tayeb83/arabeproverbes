@@ -445,7 +445,7 @@ aside {
 button.btn, input[type="submit"].btn {
   *padding-top: 2px;
   *padding-bottom: 2px;
-   background-color: #006dcc; 
+  
 }
 button.btn::-moz-focus-inner, input[type="submit"].btn::-moz-focus-inner {
   padding: 0;
