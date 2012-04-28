@@ -1,4 +1,4 @@
-<h1>جميع المستخدمبن</h1>
+<h1>كل الأمثال و الحكم</h1>
 
 <%= will_paginate :previous_label => 'السابق', :next_label => 'التالي', :class => 'pager' %>
 
@@ -7,11 +7,11 @@
     <li>
       
         <span class="user">
-    		<%= link_to proverbe.user.name %>
+    		<%= link_to proverbe.user.name  %>
         </span>
     <span class="corps"><%= proverbe.Corps %></span>
   <span class="timestamp">
-    أرسل من حوالي <%= time_ago_in_words(feed_item.created_at)%>.
+    أرسل من حوالي <%= time_ago_in_words(proverbe.created_at)%>.
   </span>
   <% if current_user?(proverbe.user) %>
     <%= link_to "حذف", proverbe, :method =>  :delete,

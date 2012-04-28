@@ -14,6 +14,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     if @user.save
       flash[:success] = "مرحبا، أنت الآن عضو في بوابتنا"
+     
       redirect_to @user
     else
       render 'new'
