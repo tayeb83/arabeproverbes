@@ -56,6 +56,13 @@ module Arabproverbe
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
 
+
+    Disqus::defaults[:account] = "dtmdeblog"
+    # so that the comments will load up in development environment
+    Disqus::defaults[:developer] = true 
+    Disqus::defaults[:container_id] = "disqus_thread"
+    Disqus::defaults[:show_powered_by] = false
+
     
   end
 end

@@ -1,0 +1,7 @@
+class Likerelation < ActiveRecord::Base
+  attr_accessible :user_id, :proverbe_id
+
+  belongs_to :id_user, :class_name => "User"
+  belongs_to :id_proverbe, :class_name => "Proverbe"
+
+end

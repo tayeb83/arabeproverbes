@@ -6,7 +6,8 @@ class ProverbesController < ApplicationController
   # GET /proverbes
   # GET /proverbes.json
   def index
-    @proverbes = Proverbe.all
+     #@proverbes = Proverbe.all
+     @proverbes = Proverbe.paginate(:page=> params[:page])
 
     respond_to do |format|
       format.html # index.html.erb
@@ -79,6 +80,13 @@ class ProverbesController < ApplicationController
   def destroy
     @proverbe.destroy
     redirect_back_or root_path
+  end
+
+ def liked
+    @titre = "المحبون"
+    @proverbe = Proverbe.find(params[:id])
+    @proverbes = @proverbe.following.paginate(:page => params[:page])
+    render 'show_follow'
   end
 
 private

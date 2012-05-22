@@ -9,7 +9,7 @@
         <span class="user">
     		<%= link_to proverbe.user.name, proverbe.user  %>
         </span>
-    <span class="corps"><%= proverbe.Corps %></span>
+    <span class="corps"><%= link_to proverbe.Corps, proverbe %></span>
   <span class="timestamp">
     أرسل من حوالي <%= time_ago_in_words(proverbe.created_at)%>.
   </span>
@@ -18,11 +18,12 @@
                                      :confirm=> "هل أنت متأكد",
                                      :title=>    proverbe.Corps %>
 
-
-   <%= link_to "تحديث المثل", edit_proverbe_path(proverbe) %>
+   <%= link_to "تحديث المثل", edit_proverbe_path(proverbe) %> 
+   <%= proverbe.liked.count%>
   <% end %>
 	
     </li>
+  
   <% end %>
 </ul>
 

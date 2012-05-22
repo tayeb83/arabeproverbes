@@ -1,10 +1,18 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>المحتوى</b>
+  <b>المحتوى : </b>
   <%= @proverbe.Corps %>
 </p>
 
 
+
+
+
+
+
 <%= link_to 'تحديث', edit_proverbe_path(@proverbe) %> |
 <%= link_to 'الرجوع', root_path %>
+<p>
+<%= raw(disqus_thread) %>
+</p>

@@ -12,9 +12,14 @@ class User < ActiveRecord::Base
   has_many :followers, :through => :reverse_relationships, :source => :follower
 
  
+  has_many :likerelations, :dependent => :destroy 
+
+  has_many :likeproverbes, :through =>:likerelations, :source => :id_proverbe
 
   attr_accessible :name, :email, :password, :password_confirmation
   before_save :encrypt_password, :create_remember_token
+  
+  has_many :comments, :dependent => :destroy
 
 
 	
@@ -35,6 +40,15 @@ class User < ActiveRecord::Base
       nil
     end
   end
+
+  def like!(id_proverbe)
+  likerelations.create!(:id_proverbe => id_proverbe)
+  end 
+  
+  def unlike!(id_proverbe)
+  likerelations.find_by_id_proverbe(id_proverbe).destroy
+  end 
+
 
   def following?(followed)
     relationships.find_by_followed_id(followed)

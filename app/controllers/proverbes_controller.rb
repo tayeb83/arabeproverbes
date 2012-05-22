@@ -82,6 +82,13 @@ class ProverbesController < ApplicationController
     redirect_back_or root_path
   end
 
+ def liked
+    @titre = "المحبون"
+    @proverbe = Proverbe.find(params[:id])
+    @proverbes = @proverbe.liked.paginate(:page => params[:page])
+    render 'show_follow'
+  end
+
 private
    def signed_in_user
       unless signed_in?

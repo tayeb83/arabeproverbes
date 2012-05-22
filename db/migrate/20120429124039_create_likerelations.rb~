@@ -1,0 +1,15 @@
+class CreateLikerelations < ActiveRecord::Migration
+  def  self.up
+    create_table :likerelations do |t|
+      t.integer :user_id
+      t.integer :proverbe_id
+
+      t.timestamps
+    end
+
+    add_index :likerelations, :id_user
+    add_index :likerelations, :id_proverbe
+    add_index :likerelations, [:id_user, :id_proverbe], :unique => true
+
+  end
+end
