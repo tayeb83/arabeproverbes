@@ -14,6 +14,8 @@ Arabproverbe::Application.routes.draw do
   get "pages/contact"
 
   resources :users
+  match "/proverbes/add_new_comment" => "proverbes#add_new_comment", :as => "add_new_comment_to_proverbes", :via => [:proverbe]
+
 
   resources :users do
     member do

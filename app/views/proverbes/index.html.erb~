@@ -8,7 +8,6 @@
       
         <span class="user">
     		<%= link_to proverbe.user.name, proverbe.user  %>
-                 <%= link_to proverbe.user.name, proverbe.user  %>
         </span>
     <span class="corps"><%= link_to proverbe.Corps, proverbe %></span>
   <span class="timestamp">
@@ -19,11 +18,18 @@
                                      :confirm=> "هل أنت متأكد",
                                      :title=>    proverbe.Corps %>
 
-   <%= link_to "تحديث المثل", edit_proverbe_path(proverbe) %> 
-   <%= proverbe.liked.count%>
-  <% end %>
+ <%= link_to "تحديث المثل", edit_proverbe_path(proverbe) %> 
+
+<%= link_to "Comment wall", proverbe_path(proverbe.id) + "#disqus_thread" %>
+
+<%= raw(disqus_comment_counts) %>
+                                                           
+
+
+<% end %>
 	
     </li>
+
   
   <% end %>
 </ul>

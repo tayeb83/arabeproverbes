@@ -18,11 +18,18 @@
                                      :confirm=> "هل أنت متأكد",
                                      :title=>    proverbe.Corps %>
 
-   <%= link_to "تحديث المثل", edit_proverbe_path(proverbe) %> 
-   <%= proverbe.liked.count%>
-  <% end %>
+ <%= link_to "تحديث المثل", edit_proverbe_path(proverbe) %> 
+
+<%= link_to "عدد التعليقات", proverbe_path(proverbe.id) + "#disqus_thread" %>
+
+<%= raw(disqus_comment_counts) %>
+                                                           
+
+
+<% end %>
 	
     </li>
+
   
   <% end %>
 </ul>

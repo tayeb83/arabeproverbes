@@ -5,14 +5,19 @@
   <%= @proverbe.Corps %>
 </p>
 
+<%= form_tag "/proverbes/add_new_comment" do %>
+    <%= hidden_field_tag "id"%>
+    <%= text_area_tag "comment[comment]" %>
+    <%= submit_tag "Proverbe Comment" %>
+  <% end %>
 
 
 
+<p>
+<%= raw(disqus_thread) %>
+</p>
 
 
 
 <%= link_to 'تحديث', edit_proverbe_path(@proverbe) %> |
 <%= link_to 'الرجوع', root_path %>
-<p>
-<%= raw(disqus_thread) %>
-<p>

@@ -23,6 +23,10 @@ Arabproverbe::Application.routes.draw do
 
   resources :proverbes
 
+resources :proverbes do
+  resources :comments
+end
+
   resources :sessions	
 
   resources :relationships, :only=> [:create, :destroy]

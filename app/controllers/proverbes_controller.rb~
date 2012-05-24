@@ -85,8 +85,14 @@ class ProverbesController < ApplicationController
  def liked
     @titre = "المحبون"
     @proverbe = Proverbe.find(params[:id])
-    @proverbes = @proverbe.following.paginate(:page => params[:page])
+    @proverbes = @proverbe.liked.paginate(:page => params[:page])
     render 'show_follow'
+  end
+
+  def add_new_comment
+    proverbe = Proverbe.find(params[:id])
+    proverbe.comments << Proverbe.new(params[:comment])
+    redirect_to :action => :show, :id => post
   end
 
 private

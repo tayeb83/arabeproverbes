@@ -89,6 +89,12 @@ class ProverbesController < ApplicationController
     render 'show_follow'
   end
 
+  def add_new_comment
+    proverbe = Proverbe.find(params[:id])
+    proverbe.comments << Proverbe.new(params[:comment])
+    redirect_to :action => :show, :id => proverbe
+  end
+
 private
    def signed_in_user
       unless signed_in?
