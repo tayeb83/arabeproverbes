@@ -1,37 +1,52 @@
 <h1>كل الأمثال و الحكم</h1>
 
 <%= will_paginate :previous_label => 'السابق', :next_label => 'التالي', :class => 'pager' %>
-
-<ul class="users">
-  <% @proverbes.each do |proverbe| %>
-    <li>
+<div class="row">
+<div id="proverbes ">
+  <% @proverbes.each do |proverbe| %>    
       
-        <span class="user">
-    		<%= link_to proverbe.user.name, proverbe.user  %>
-        </span>
-    <span class="corps"><%= link_to proverbe.Corps, proverbe %></span>
-  <span class="timestamp">
-    أرسل من حوالي <%= time_ago_in_words(proverbe.created_at)%>.
-  </span>
-  <% if current_user?(proverbe.user) %>
+<div class="proverbe proverbe_hover">
+
+<div class="proverbeTop">
+
+</div>
+        
+ <div class="proverbeContent">
+  
+  <div class="proverbeMainDetails">
+
+     <div class="proverbeTopDetails">
+       <span class="authorName"> <%= link_to proverbe.user.name, proverbe.user  %></span>
+       <span class="provebeDate"> أرسل من حوالي <%= time_ago_in_words(proverbe.created_at)%>. </span>	
+     </div>   
+ 
+     <div class="proverbeMainContent singleProverbeContents">
+	<p><%= link_to proverbe.Corps, proverbe %></p>
+     </div>
+   
+  </div>
+<% if current_user?(proverbe.user) %>
     <%= link_to "حذف", proverbe, :method =>  :delete,
                                      :confirm=> "هل أنت متأكد",
                                      :title=>    proverbe.Corps %>
 
  <%= link_to "تحديث المثل", edit_proverbe_path(proverbe) %> 
 
-<%= link_to "Comment wall", proverbe_path(proverbe.id) + "#disqus_thread" %>
+<%= link_to "عدد التعليقات", proverbe_path(proverbe.id) + "#disqus_thread" %>
 
 <%= raw(disqus_comment_counts) %>
                                                            
 
+<% end %>
+<div class="proverbeExtra">
+</div>
+</div>
+</div>
+
 
 <% end %>
-	
-    </li>
 
-  
-  <% end %>
-</ul>
-
+</div>
+</div>
 <%= will_paginate :previous_label => 'السابق', :next_label => 'التالي' , :class => 'pager'%>
+

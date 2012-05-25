@@ -12,25 +12,39 @@
         <%= render 'shared/user_info' %>
       </section>
       <section>
+        <%= render 'shared/stats' %>
+      </section>
+      <section>
         <%= render 'shared/proverbe_form' %>
       </section>
     </aside>
 
   	<div class="span8">
-      <h3>الأمثال المضافة</h3>
+      <h3>الأمثال الخاصة</h3>
       <%= render 'shared/feed' %>
     </div>
   </div>  
 <% else %>
 <div class="hero-unit">
-  <h1>بوابة الأمثال و الحكم</h1>
-  <p>بوابة الأمثال و الحكم عبارة عن مساحة تبادل بين الناس من أجل نشر و تقاسم الكثير من الأمثال و الحكم العربية و بجميع اللهجات.</p>
-  <p>
+<div class="row-fluid">
+   <div class="span6">
+    <img class="aligncenter" src="/images/proverbe_logo.jpg" alt="Sample Image" width="440" height="300">
+  </div> 
+   <div class="span6">
+
+            <h1 class="featured-title">بوابة الأمثال و الحكم</h1>           
+            <p>بوابة الأمثال و الحكم عبارة عن مساحة تبادل بين الناس من أجل نشر و تقاسم الكثير من الأمثال و الحكم العربية و بجميع اللهجات.</p>            
+            		        
+                       
+        </div>
+
+
    
     <a class="btn btn-primary btn-large">
       اقرأ المزيد
     </a>
   </p>
+</div>
 </div>
 
  <div id="user_nav">

@@ -1,10 +1,11 @@
 <h1>كل الأمثال و الحكم</h1>
 
 <%= will_paginate :previous_label => 'السابق', :next_label => 'التالي', :class => 'pager' %>
-
+<div class="row">
 <ul class="users">
   <% @proverbes.each do |proverbe| %>
     <li>
+     
       
         <span class="user">
     		<%= link_to proverbe.user.name, proverbe.user  %>
@@ -28,10 +29,13 @@
 
 <% end %>
 	
-    </li>
+</li>
+
+
+
 
   
   <% end %>
 </ul>
-
+</div>
 <%= will_paginate :previous_label => 'السابق', :next_label => 'التالي' , :class => 'pager'%>
