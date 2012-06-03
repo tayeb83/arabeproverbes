@@ -62,9 +62,7 @@ gem 'jquery-rails'
 group :production do
   # gems specifically for Heroku go here
   gem "pg"
-    gem 'rspec-rails', '2.8.1'
   gem 'execjs'
-  gem 'therubyracer'	
-  gem 'annotate', '~> 2.4.1.beta'
+ 
 end
 
