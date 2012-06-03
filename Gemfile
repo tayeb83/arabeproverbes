@@ -63,7 +63,7 @@ group :production do
   # gems specifically for Heroku go here
   gem "pg"
   gem 'execjs'
-  gem 'therubyracer-heroku', '0.8.1.pre3'
+  gem 'therubyracer'
  
 end
 
