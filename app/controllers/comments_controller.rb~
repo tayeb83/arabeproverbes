@@ -1,8 +1,0 @@
-class CommentsController < ApplicationController
-
- def create
-    @proverbe = Proverbe.find(params[:proverbe_id])
-    @comment = @proverbe.comments.create(params[:comment])
-    redirect_to proverbe_path(@proverbe)
-  end
-end
