@@ -5,7 +5,7 @@ gem "rails-i18n", "0.1.8"
 gem "bcrypt-ruby", :require => "bcrypt"
 
 gem 'bootstrap-sass', '2.0.0'
-gem 'devise'
+gem 'devise', '1.4.7'
 
 gem 'faker', '1.0.1'
 
