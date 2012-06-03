@@ -23,7 +23,7 @@ test:
 
 production:
   adapter: pg
-  database: arabproverbedb
+  database: artproverbes
   username: root
   password: imran09
   encoding: utf8
