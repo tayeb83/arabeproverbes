@@ -19,13 +19,12 @@ Arabproverbe::Application.configure do
 
   # Generate digests for assets URLs
   config.assets.digest = true
-   config.action_mailer.default_url_options = { :host => 'http://evening-leaf-8422.herokuapp.com' }
   config.action_mailer.delivery_method = :smtp
 
   config.action_mailer.smtp_settings = {
   address: "smtp.gmail.com",
   port: 587,
-  domain: "http://evening-leaf-8422.herokuapp.com",
+  domain: "www.example.com",
   authentication: "plain",
   enable_starttls_auto: true,
   user_name: 'tayeb.merabti',
