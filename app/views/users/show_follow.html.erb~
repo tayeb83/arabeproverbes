@@ -3,7 +3,7 @@
     <section>
       <h1><%= @user.name %></h1>
       <span><%= link_to "view my profile", @user %></span>
-      <span><b>Microposts:</b> <%= @user.proverbes.count %></span>
+      <span><b>عدد الأمثال</b> <%= @user.proverbes.count %></span>
     </section>
     <section>
       <%= render 'shared/stats' %>

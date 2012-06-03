@@ -1,10 +1,5 @@
 # encoding: UTF-8
-class UsersController < ApplicationController
- before_filter :signed_in_user, 
-                :only=> [:index, :edit, :update, :destroy, :following, :followers]
-  before_filter :correct_user,   :only=> [:edit, :update]
-  before_filter :admin_user,     :only=> :destroy
-  
+class UsersController < ApplicationController  
   
   def new
   @user = User.new
@@ -14,7 +9,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     if @user.save
       flash[:success] = "مرحبا، أنت الآن عضو في بوابتنا"
-      sign_in @user
+     
       redirect_to @user
     else
       render 'new'

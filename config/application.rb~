@@ -31,7 +31,7 @@ module Arabproverbe
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
-    config.i18n.default_locale = :ar
+    config.i18n.default_locale = :fr
 
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"
@@ -57,7 +57,7 @@ module Arabproverbe
     config.assets.version = '1.0'
 
 
-    Disqus::defaults[:account] = "tayeb83"
+    Disqus::defaults[:account] = "dtmdeblog"
     # so that the comments will load up in development environment
     Disqus::defaults[:developer] = true 
     Disqus::defaults[:container_id] = "disqus_thread"

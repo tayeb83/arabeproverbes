@@ -8,7 +8,7 @@
          
 	
              
-       <% if signed_in? %>
+        <% if user_signed_in? %>
             <li><%= link_to "المستخدمين", users_path %></li>
             <li><%= link_to "كل الأمثال و الحكم", proverbes_path %></li>
              <li id="fat-menu" class="dropdown">
@@ -17,18 +17,18 @@
 	     </a>
              
             <ul class="dropdown-menu">
-                <li><%= link_to current_user.name, edit_user_path(current_user.id) %></li>
+                <li><%= link_to current_user.username, edit_user_path(current_user.id) %></li>
                 <li><%= link_to "الأمثال الخاصة", current_user %></i></li>
                 <li class="divider"></li>
                 
                 <li>
-                  <%= link_to "الخروج", log_out_path, :media=> "delete" %>
+                  <%= link_to "الخروج", destroy_user_session_path, :method => :delete %>
                 </li>
               </ul>
              
             </li>
           <% else %>
-            <li><%= link_to "الدخول", log_in_path %></li>
+            <li><%= link_to "الدخول", new_user_session_path %></li>
           <% end %>
         <li><%= link_to "الرئيسية", root_path %></li>
         </ul>

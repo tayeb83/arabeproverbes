@@ -2,7 +2,7 @@
 class PagesController < ApplicationController
   def home
   @title = "الرئيسية"
-  if signed_in?
+  if user_signed_in?
   @proverbe = current_user.proverbes.build 
   @feed_items = current_user.feed.paginate(:page=> params[:page])
   end

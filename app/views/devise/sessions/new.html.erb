@@ -1,0 +1,30 @@
+<h2>تسجيل الدخول</h2>
+
+<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+
+<div id="wrapper">
+
+
+  <div id="login" class="animate form">
+
+  <p>
+    <%= f.label :"اسم المستخدم", :class => "uname"%><br />
+    <%= f.text_field :username %>
+  </p>	
+
+  <p>
+    <%= f.label :"كلمة السر" %><br />
+    <%= f.password_field :password %>
+  </p>
+
+  <% if devise_mapping.rememberable? -%>
+    <div><%= f.check_box :remember_me %> <%= f.label :"تذكر لي" %></div>
+  <% end -%>  
+ 
+</div>
+</div>
+<p class="btn btn-large btn-primary"><%= f.submit "الدخول"%></p>
+<% end %>
+
+<p>مستخدم جديد؟ <%= link_to "سجل نفسك الآن!", new_user_registration_path %></p> <br />
+<p> <%= link_to "هل نسيت كلمت السر؟", new_user_password_path %> </p>

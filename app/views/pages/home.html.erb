@@ -2,10 +2,10 @@
 <html>
 <head>
 <title><%= @title %></title>
-</head>
+ </head>
 <body>
 
-<% if signed_in? %>
+<% if user_signed_in? %>
   <div class="row">
     <aside class="span4">
       <section>
@@ -52,12 +52,12 @@
     
     <ul class="nav pull-left">
     <li><%= current_user.email %></li>	
-    <li><%= link_to "الخروج", log_out_path %></li>	
+    <li><%= link_to "الخروج", destroy_user_session_path %></li>	
     </ul>	    
 
     
   <% else %>
-    <%= link_to "الدخول", log_in_path, :class => "btn btn-large btn-primary"%>
+    <%= link_to "الدخول", new_user_session_path, :class => "btn btn-large btn-primary"%>
   <% end %>
 </div>
 

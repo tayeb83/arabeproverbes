@@ -1,10 +1,5 @@
 # encoding: UTF-8
-class UsersController < ApplicationController
- before_filter :signed_in_user, 
-                :only=> [:index, :edit, :update, :destroy, :following, :followers]
-  before_filter :correct_user,   :only=> [:edit, :update]
-  before_filter :admin_user,     :only=> :destroy
-  
+class UsersController < ApplicationController  
   
   def new
   @user = User.new
@@ -68,13 +63,6 @@ class UsersController < ApplicationController
   
 
 private
-   def signed_in_user
-      unless signed_in?
-        store_location
-        redirect_to log_in_path, :notice=> "Please sign in."
-      end
-    end
-
     def correct_user
       @user = User.find(params[:id])
       redirect_to(root_path) unless current_user?(@user)

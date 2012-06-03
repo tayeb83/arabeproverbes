@@ -19,8 +19,21 @@ Arabproverbe::Application.configure do
 
   # Generate digests for assets URLs
   config.assets.digest = true
+   config.action_mailer.default_url_options = { :host => 'http://evening-leaf-8422.herokuapp.com' }
+  config.action_mailer.delivery_method = :smtp
 
-  # Defaults to Rails.root.join("public/assets")
+  config.action_mailer.smtp_settings = {
+  address: "smtp.gmail.com",
+  port: 587,
+  domain: "http://evening-leaf-8422.herokuapp.com",
+  authentication: "plain",
+  enable_starttls_auto: true,
+  user_name: 'tayeb.merabti',
+  password: 'bosser83'
+}  
+
+
+# Defaults to Rails.root.join("public/assets")
   # config.assets.manifest = YOUR_PATH
 
   # Specifies the header that your server uses for sending files

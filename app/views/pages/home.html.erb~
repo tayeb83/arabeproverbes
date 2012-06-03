@@ -2,10 +2,11 @@
 <html>
 <head>
 <title><%= @title %></title>
+ <h1>Welcome <%= current_user.email if current_user %></h1>
 </head>
 <body>
 
-<% if signed_in? %>
+<% if user_signed_in? %>
   <div class="row">
     <aside class="span4">
       <section>
@@ -28,7 +29,7 @@
 <div class="hero-unit">
 <div class="row-fluid">
    <div class="span6">
-    <img class="aligncenter" src="/images/proverbe_logo.jpg" alt="Sample Image" width="440" height="300">
+    <img class="aligncenter" src="/images/proverbe_logo.jpg" alt="Sample Image" width="350" height="300">
   </div> 
    <div class="span6">
 
@@ -52,12 +53,12 @@
     
     <ul class="nav pull-left">
     <li><%= current_user.email %></li>	
-    <li><%= link_to "الخروج", log_out_path %></li>	
+    <li><%= link_to "الخروج", destroy_user_session_path %></li>	
     </ul>	    
 
     
   <% else %>
-    <%= link_to "الدخول", log_in_path, :class => "btn btn-large btn-primary"%>
+    <%= link_to "الدخول", new_user_session_path, :class => "btn btn-large btn-primary"%>
   <% end %>
 </div>
 

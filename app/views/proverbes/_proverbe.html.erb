@@ -3,9 +3,9 @@
   <span class="timestamp">
      أرسل من حوالي <%= time_ago_in_words(proverbe.created_at) %> 
   </span>
-  <% if current_user?(proverbe.user) %>
+  <% if current_user = proverbe.user %>
     <%= link_to "حذف", proverbe, :method => :delete,
                                      :confirm=> "هل أنت متأكد",
-                                     :title=>   proverbe.Corps %>
+                                    :title=>   proverbe.Corps %>
   <% end %>
 </li>

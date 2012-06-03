@@ -2,30 +2,49 @@
 
 <%= will_paginate :previous_label => 'السابق', :next_label => 'التالي', :class => 'pager' %>
 <div class="row">
-<div id="proverbes ">
-  <% @proverbes.each do |proverbe| %>    
-      
-<div class="proverbe proverbe_hover">
+ <ul class="users clickable" >
 
-<div class="proverbeTop">
-
-</div>
-        
- <div class="proverbeContent">
-  
-  <div class="proverbeMainDetails">
-
-     <div class="proverbeTopDetails">
-       <span class="authorName"> <%= link_to proverbe.user.name, proverbe.user  %></span>
-       <span class="provebeDate"> أرسل من حوالي <%= time_ago_in_words(proverbe.created_at)%>. </span>	
-     </div>   
- 
-     <div class="proverbeMainContent singleProverbeContents">
-	<p><%= link_to proverbe.Corps, proverbe %></p>
-     </div>
-   
+ <% @proverbes.each do |proverbe| %>
+<li>
+       
+ <div class="modal hide fade" id="<%= proverbe.user.name %>">
+  <div class="modal-header">
+    <button class="close" data-dismiss="modal"> × </button>
+    <h2> <%= link_to proverbe.user.name,  proverbe.user%> </h2>
   </div>
-<% if current_user?(proverbe.user) %>
+
+ <div class="modal-body">
+   <% @user= proverbe.user %>
+   <% if @user.proverbes.any? %>
+   <div class="row">
+      <ul class="users" >
+      <% @user.proverbes.each do |proverbeuse| %>
+        <li> <%= proverbeuse.Corps %></li>
+      <% end %>
+     </ul>
+  </div> 
+   <% end %> 
+ </div>
+
+  <div class="modal-footer">
+    <a href="#" class="btn">Close</a>
+  </div>
+
+</div> 
+   <div class="userstopdetail">   
+   <p class="user" data-toggle="modal" href="#<%= proverbe.user.name %>">
+    		<%= proverbe.user.name%>
+   </p>
+   <span class="timestamp"> <i class="icon-time"></i>
+أرسل من حوالي <%= time_ago_in_words(proverbe.created_at)%>.
+  
+  </span>
+ </div>
+    <p class="corps">
+		<%= link_to proverbe.Corps, proverbe %>
+    </p>
+  
+  <% if current_user = proverbe.user %>
     <%= link_to "حذف", proverbe, :method =>  :delete,
                                      :confirm=> "هل أنت متأكد",
                                      :title=>    proverbe.Corps %>
@@ -37,16 +56,16 @@
 <%= raw(disqus_comment_counts) %>
                                                            
 
-<% end %>
-<div class="proverbeExtra">
-</div>
-</div>
-</div>
-
 
 <% end %>
+	
+</li>
 
-</div>
+
+
+
+  
+  <% end %>
+</ul>
 </div>
 <%= will_paginate :previous_label => 'السابق', :next_label => 'التالي' , :class => 'pager'%>
-

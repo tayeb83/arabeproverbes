@@ -1,5 +1,5 @@
 Arabproverbe::Application.routes.draw do
-  get "sessions/new"
+  
 
   get "pages/terms"
 
@@ -13,7 +13,11 @@ Arabproverbe::Application.routes.draw do
 
   get "pages/contact"
 
+  devise_for :users
+
   resources :users
+  match "/proverbes/add_new_comment" => "proverbes#add_new_comment", :as => "add_new_comment_to_proverbes", :via => [:proverbe]
+
 
   resources :users do
     member do
@@ -27,24 +31,9 @@ resources :proverbes do
   resources :comments
 end
 
-  resources :sessions	
 
   resources :relationships, :only=> [:create, :destroy]
 
-
-
- get "log_out" => "sessions#destroy", :as => "log_out"
- get "log_in" => "sessions#new", :as => "log_in"
- get "sign_up" => "users#new", :as => "sign_up"
-
-
-  match '/signup',  :to => 'users#new'
-  match '/signin',  :to => 'sessions#new'
-  match '/signout', :to => 'sessions#destroy', :via=> :delete
-    
-
-
- match '/signup', :to => 'users#new'
  match '/contact', :to => 'pages#contact'
  match '/about', :to => 'pages#about'
  match '/help', :to => 'pages#help'

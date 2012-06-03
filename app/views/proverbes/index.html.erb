@@ -2,19 +2,49 @@
 
 <%= will_paginate :previous_label => 'السابق', :next_label => 'التالي', :class => 'pager' %>
 <div class="row">
-<ul class="users">
-  <% @proverbes.each do |proverbe| %>
-    <li>
-     
-      
-        <span class="user">
-    		<%= link_to proverbe.user.name, proverbe.user  %>
-        </span>
-    <span class="corps"><%= link_to proverbe.Corps, proverbe %></span>
-  <span class="timestamp">
-    أرسل من حوالي <%= time_ago_in_words(proverbe.created_at)%>.
+ <ul class="users clickable" >
+
+ <% @proverbes.each do |proverbe| %>
+<li>
+       
+ <div class="modal hide fade" id="<%= proverbe.user.username %>">
+  <div class="modal-header">
+    <button class="close" data-dismiss="modal"> × </button>
+    <h2> <%= link_to proverbe.user.username,  proverbe.user%> </h2>
+  </div>
+
+ <div class="modal-body">
+   <% @user= proverbe.user %>
+   <% if @user.proverbes.any? %>
+   <div class="row">
+      <ul class="users" >
+      <% @user.proverbes.each do |proverbeuse| %>
+        <li> <%= proverbeuse.Corps %></li>
+      <% end %>
+     </ul>
+  </div> 
+   <% end %> 
+ </div>
+
+  <div class="modal-footer">
+    <a href="#" class="btn">Close</a>
+  </div>
+
+</div> 
+   <div class="userstopdetail">   
+   <p class="user" data-toggle="modal" href="#<%= proverbe.user.username %>">
+    		<%= proverbe.user.username%>
+   </p>
+   <span class="timestamp"> <i class="icon-time"></i>
+أرسل من حوالي <%= time_ago_in_words(proverbe.created_at)%>.
+  
   </span>
-  <% if current_user?(proverbe.user) %>
+ </div>
+    <p class="corps">
+		<%= link_to proverbe.Corps, proverbe %>
+    </p>
+  
+  <% if current_user = proverbe.user %>
     <%= link_to "حذف", proverbe, :method =>  :delete,
                                      :confirm=> "هل أنت متأكد",
                                      :title=>    proverbe.Corps %>

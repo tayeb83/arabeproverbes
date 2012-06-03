@@ -1,19 +1,24 @@
 <li id="<%= feed_item.id %>">
-  
+<div class="userstopdetailfeed">  
   <span class="user">
     <%= link_to feed_item.user.name %>
   </span>
-  <span class="corps"><%= feed_item.Corps %></span>
+
   <span class="timestamp">
     أرسل من حوالي <%= time_ago_in_words(feed_item.created_at)%>.
-  </span>
+  </span> 
+
+</div>
+  
+  <p class="corps"><%= feed_item.Corps %></p>
+  
    <% if current_user?(feed_item.user) %>
     <%= link_to "حذف", feed_item, :method =>  :delete,
                                      :confirm=> "هل أنت متأكد",
                                      :title=>    feed_item.Corps %>
 
 
-   <%= link_to "تحديث المثل", edit_proverbe_path(feed_item.Corps) %>
+   <%= link_to "تحديث المثل", edit_proverbe_path(feed_item) %>
   <% end %>
 
 </li>
