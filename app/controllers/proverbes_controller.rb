@@ -79,7 +79,7 @@ class ProverbesController < ApplicationController
   # DELETE /proverbes/1.json
   def destroy
     @proverbe.destroy
-    redirect_back_or root_path
+    redirect_to root_path
   end
 
  def liked

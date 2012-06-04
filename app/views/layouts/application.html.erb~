@@ -17,7 +17,7 @@
       <%= yield %>
       <div id="user_nav">
  
-</div>
+      </div>
       <%= render 'layouts/footer' %>
     </div>
   </body>

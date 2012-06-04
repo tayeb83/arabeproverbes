@@ -10,17 +10,21 @@
     </section>
   </aside>
   <div class="span8">
-     <%= render 'follow_form' if signed_in? %>
-    <% if @user.proverbes.any? %>
-      <h3> الأمثال   (<%= @user.proverbes.count %>)</h3>
-      <ol class="microposts">
-        <%= render @proverbes %>
-      </ol>
+
+     <%= render 'follow_form' %>
+    
+      <h1> الأمثال  </h1>
+      <div class="row">
+      <ul class="users" >
+      <% @user.proverbes.each do |proverbeuse| %>
+        <li> <%= proverbeuse.Corps %></li>
+      <% end %>
+      </ul>
+      </div>
+
       <%= will_paginate @proverbes %>
-    <% end %>
-  </div>
+     </div>
 
 
 </div>
-<%= link_to 'تحديث', edit_user_path(@user) %> |
 <%= link_to 'الرجوع', users_path %>

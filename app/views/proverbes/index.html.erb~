@@ -26,10 +26,6 @@
    <% end %> 
  </div>
 
-  <div class="modal-footer">
-    <a href="#" class="btn">Close</a>
-  </div>
-
 </div> 
    <div class="userstopdetail">   
    <p class="user" data-toggle="modal" href="#<%= proverbe.user.name %>">
@@ -44,20 +40,19 @@
 		<%= link_to proverbe.Corps, proverbe %>
     </p>
   
-  <% if current_user = proverbe.user %>
+  <% if proverbe.user == current_user %>
     <%= link_to "حذف", proverbe, :method =>  :delete,
                                      :confirm=> "هل أنت متأكد",
                                      :title=>    proverbe.Corps %>
 
- <%= link_to "تحديث المثل", edit_proverbe_path(proverbe) %> 
+ <%= link_to "تحديث المثل", edit_proverbe_path(proverbe) %>                                                          
+
+
+<% end %>
 
 <%= link_to "عدد التعليقات", proverbe_path(proverbe.id) + "#disqus_thread" %>
 
 <%= raw(disqus_comment_counts) %>
-                                                           
-
-
-<% end %>
 	
 </li>
 

@@ -92,7 +92,7 @@ class ProverbesController < ApplicationController
   def add_new_comment
     proverbe = Proverbe.find(params[:id])
     proverbe.comments << Proverbe.new(params[:comment])
-    redirect_to :action => :show, :id => post
+    redirect_to :action => :show, :id => proverbe
   end
 
 private

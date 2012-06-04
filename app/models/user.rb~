@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   # :token_authenticatable, :lockable, :timeoutable and :activatable
 #:confirmable,
   devise :database_authenticatable, :registerable, 
-         :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :trackable, :validatable,:confirmable
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :username, :name, :password, :password_confirmation, :remember_me
@@ -21,6 +21,8 @@ class User < ActiveRecord::Base
                                    :dependent => :destroy
   
   has_many :followers, :through => :reverse_relationships, :source => :follower
+
+   validates_uniqueness_of :id, :scope => [:email, :username]
 
   
 

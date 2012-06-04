@@ -22,6 +22,8 @@ class User < ActiveRecord::Base
   
   has_many :followers, :through => :reverse_relationships, :source => :follower
 
+   validates_uniqueness_of :username
+
   
 
 

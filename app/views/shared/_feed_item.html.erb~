@@ -1,7 +1,7 @@
 <li id="<%= feed_item.id %>">
 <div class="userstopdetailfeed">  
   <span class="user">
-    <%= link_to feed_item.user.name %>
+    <%= link_to feed_item.user.username %>
   </span>
 
   <span class="timestamp">
@@ -12,7 +12,7 @@
   
   <p class="corps"><%= feed_item.Corps %></p>
   
-   <% if current_user?(feed_item.user) %>
+   <% if current_user == feed_item.user %>
     <%= link_to "حذف", feed_item, :method =>  :delete,
                                      :confirm=> "هل أنت متأكد",
                                      :title=>    feed_item.Corps %>
