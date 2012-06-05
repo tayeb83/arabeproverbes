@@ -7,7 +7,7 @@ class ProverbesController < ApplicationController
   # GET /proverbes.json
   def index
      #@proverbes = Proverbe.all
-     @proverbes = Proverbe.paginate(:page=> params[:page])
+     @proverbes = Proverbe.paginate(:page => params[:page], :per_page => 5)
 
     respond_to do |format|
       format.html # index.html.erb
