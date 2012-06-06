@@ -7,7 +7,7 @@
 
 <% if user_signed_in? %>
   <div class="row">
-    <aside class="span4">
+    <div class="span4">
       <section>
         <%= render 'shared/user_info' %>
       </section>
@@ -17,9 +17,9 @@
       <section>
         <%= render 'shared/proverbe_form' %>
       </section>
-    </aside>
+    </div>
 
-  	<div class="span8">
+  	<div class="span4 offset4">
       <h3>الأمثال الخاصة</h3>
       <%= render 'shared/feed' %>
     </div>

@@ -87,24 +87,24 @@ aside {
 }
 
 .navbar-inner {
-  min-height: 40px;
-  padding-right: 20px;
+   min-height: 40px;
   padding-left: 20px;
-  background-color: #2c2c2c;
-  background-image: -moz-linear-gradient(top, #333333, #222222);
-  background-image: -ms-linear-gradient(top, #333333, #222222);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#333333), to(#222222));
-  background-image: -webkit-linear-gradient(top, #333333, #222222);
-  background-image: -o-linear-gradient(top, #333333, #222222);
-  background-image: linear-gradient(top, #333333, #222222);
+  padding-right: 20px;
+  background-color: #50a8dc;
+  background-image: -moz-linear-gradient(top, #61b0df, #369bd7);
+  background-image: -ms-linear-gradient(top, #61b0df, #369bd7);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#61b0df), to(#369bd7));
+  background-image: -webkit-linear-gradient(top, #61b0df, #369bd7);
+  background-image: -o-linear-gradient(top, #61b0df, #369bd7);
+  background-image: linear-gradient(top, #61b0df, #369bd7);
   background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#61b0df', endColorstr='#369bd7', GradientType=0);
   -webkit-border-radius: 4px;
-     -moz-border-radius: 4px;
-          border-radius: 4px;
-  filter: progid:dximagetransform.microsoft.gradient(startColorstr='#333333', endColorstr='#222222', GradientType=0);
-  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
-     -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
-          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,.25), inset 0 -1px 0 rgba(0,0,0,.1);
+  -moz-box-shadow: 0 1px 3px rgba(0,0,0,.25), inset 0 -1px 0 rgba(0,0,0,.1);
+  box-shadow: 0 1px 3px rgba(0,0,0,.25), inset 0 -1px 0 rgba(0,0,0,.1);
 }
 
 .navbar .container {
@@ -116,7 +116,7 @@ aside {
 }
 
 .navbar {
-  color: #999999;
+ color: #f5f5f5;
 }
 
 .navbar .brand:hover {
@@ -131,7 +131,7 @@ aside {
   font-size: 20px;
   font-weight: 200;
   line-height: 1;
-  color: #999999;
+   color: #f5f5f5;
 }
 
 .navbar .navbar-text {
@@ -140,7 +140,7 @@ aside {
 }
 
 .navbar .navbar-link {
-  color: #999999;
+   color: #f5f5f5;
 }
 
 .navbar .navbar-link:hover {
@@ -300,7 +300,7 @@ aside {
   float: none;
   padding: 9px 10px 11px;
   line-height: 19px;
-  color: #999999;
+   color: #f5f5f5;
   text-decoration: none;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 }
