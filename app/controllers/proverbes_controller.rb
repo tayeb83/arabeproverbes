@@ -96,11 +96,11 @@ class ProverbesController < ApplicationController
   end
 
 private
-   def signed_in_user
-      unless signed_in?
-        store_location
-        redirect_to log_in_path, :notice=> "Please sign in."
-      end
+   def signed_in_user 
+       unless signed_in?
+          deny_access
+       end
+
     end
 
  def correct_user
