@@ -7,7 +7,7 @@
  <% @proverbes.each do |proverbe| %>
 <li>
        
- <div class="modal hide fade" id="<%= proverbe.user.name %>">
+ <div class="modal hide fade" id="<%= proverbe.user.username %>">
   <div class="modal-header">
     <button class="close" data-dismiss="modal"> × </button>
     <h2> <%= link_to proverbe.user.name,  proverbe.user%> </h2>
@@ -28,7 +28,7 @@
 
 </div> 
    <div class="userstopdetail">   
-   <p class="user" data-toggle="modal" href="#<%= proverbe.user.name %>">
+   <p class="user" data-toggle="modal" href="#<%= proverbe.user.username %>">
     		<%= proverbe.user.name%>
    </p>
    <span class="timestamp"> <i class="icon-time"></i>
@@ -36,16 +36,20 @@
   
   </span>
  </div>
-    <p class="corps">
-		<%= link_to proverbe.Corps, proverbe %>
+    <p class="corps"> <%= link_to proverbe.Corps, proverbe %>
+    <a href="https://twitter.com/share" class="twitter-share-button" data-text="<%= proverbe.Corps %>" data-via=<%= proverbe.user.username %> data-lang="fr">Tweeter</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
     </p>
+
+
   
-  <% if proverbe.user == current_user %>
+  
+<% if proverbe.user == current_user %>
     <%= link_to "حذف", proverbe, :method =>  :delete,
                                      :confirm=> "هل أنت متأكد",
                                      :title=>    proverbe.Corps %>
 
- <%= link_to "تحديث المثل", edit_proverbe_path(proverbe) %>                                                          
+    <%= link_to "تحديث المثل", edit_proverbe_path(proverbe) %>                                                          
 
 
 <% end %>
@@ -53,7 +57,10 @@
 <%= link_to "عدد التعليقات", proverbe_path(proverbe.id) + "#disqus_thread" %>
 
 <%= raw(disqus_comment_counts) %>
+
+
 	
+
 </li>
 
 
