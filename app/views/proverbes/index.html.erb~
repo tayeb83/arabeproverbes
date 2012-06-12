@@ -36,9 +36,8 @@
   
   </span>
  </div>
-    <p class="corps"> <%= link_to proverbe.Corps, proverbe %>
-    <a href="https://twitter.com/share" class="twitter-share-button" data-text="<%= proverbe.Corps %>" data-via=<%= proverbe.user.username %> data-lang="fr">Tweeter</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    <p class="corps">
+		<%= link_to proverbe.Corps, proverbe %>
     </p>
 
 
@@ -59,6 +58,9 @@
 <%= raw(disqus_comment_counts) %>
 
 
+
+<a href="https://twitter.com/share" class="twitter-share-button" data-url= "http://artproverbesrails1.heroku.com/proverbes" data-text="<%= proverbe.Corps %>" data-via=<%= proverbe.user.username %> data-lang="ar" data-size="large">تغريد</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 	
 
 </li>
