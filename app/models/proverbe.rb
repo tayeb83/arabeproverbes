@@ -1,13 +1,13 @@
 class Proverbe < ActiveRecord::Base
  
- attr_accessible :Corps
+ attr_accessible :Corps			
  validates :Corps, :presence => true
  validates :user_id, :presence=> true
  belongs_to :user
  has_many :likerelations, :foreign_key => "user_id",
                            :dependent => :destroy  
  
- 
+ acts_as_taggable_on :tags
 
  has_many :liked, :through => :likerelations, :source => :user
 

@@ -7,18 +7,27 @@ class ProverbesController < ApplicationController
   # GET /proverbes.json
   def index
      #@proverbes = Proverbe.all
-     @proverbes = Proverbe.paginate(:page => params[:page], :per_page => 5)
-
+     
+    if params.has_key?(:tag)   
+    @proverbes = Proverbe.tagged_with(params[:tag], :on => 'tags')
+    @proverbes =  @proverbes.paginate(:page => params[:page], :per_page => 5)
+    
+else
+    @proverbes = Proverbe.paginate(:page => params[:page], :per_page => 5)
+ end   
     respond_to do |format|
       format.html # index.html.erb
       format.json { render :json => @proverbes }
     end
   end
 
+    
+
   # GET /proverbes/1
   # GET /proverbes/1.json
   def show
     @proverbe = Proverbe.find(params[:id])
+    @tags = @proverbe.tag_counts
 
     respond_to do |format|
       format.html # show.html.erb
@@ -30,7 +39,7 @@ class ProverbesController < ApplicationController
   # GET /proverbes/new.json
   def new
     @proverbe = Proverbe.new
-
+       
     respond_to do |format|
       format.html # new.html.erb
       format.json { render :json => @proverbe }
@@ -48,8 +57,9 @@ class ProverbesController < ApplicationController
 
   def create
     @proverbe =  current_user.proverbes.build(params[:proverbe])
-
-    if @proverbe.save
+    @proverbe.tag_list ="درر,حكم"		
+   
+   if @proverbe.save
       flash[:success] = "تم انشاء المثل"
       redirect_to root_path
     else
@@ -80,6 +90,10 @@ class ProverbesController < ApplicationController
   def destroy
     @proverbe.destroy
     redirect_to root_path
+  end
+
+  def tag_cloud
+    @tags = Proverbe.tag_counts_on(:tags)
   end
 
  def liked

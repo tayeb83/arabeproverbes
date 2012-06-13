@@ -13,6 +13,7 @@ gem 'will_paginate', '3.0.3'
 gem 'will-paginate-i18n'
 gem 'will_paginate_renderers'
 gem 'disqus'
+gem "pg"
 
 gem 'bootstrap-will_paginate', '0.0.5'
 

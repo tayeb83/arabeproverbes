@@ -1,6 +1,6 @@
 <h1>كل الأمثال و الحكم</h1>
 
-<%= will_paginate :previous_label => 'السابق', :next_label => 'التالي', :class => 'pager' %>
+<
 <div class="row">
  <ul class="users clickable" >
 
@@ -59,7 +59,7 @@
 
 
 
-<a href="https://twitter.com/share" class="twitter-share-button" data-url= "http://artproverbesrails1.heroku.com/proverbes" data-text="<%= proverbe.Corps %>" data-via=<%= proverbe.user.username %> data-lang="ar" data-size="large">تغريد</a>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url= "http://artproverbesrails1.heroku.com/proverbes/<%=proverbe.id%>" data-text="<%= proverbe.Corps %>" data-via=<%= proverbe.user.username %> data-lang="ar" data-size="large">تغريد</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 	
 
@@ -72,4 +72,3 @@
   <% end %>
 </ul>
 </div>
-<%= will_paginate :previous_label => 'السابق', :next_label => 'التالي' , :class => 'pager'%>
