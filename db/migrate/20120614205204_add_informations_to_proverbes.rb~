@@ -1,0 +1,5 @@
+class AddInformationsToProverbes < ActiveRecord::Migration
+  def change
+  add_column :proverbes, :proverbe_histoire,:string	
+  end
+end
