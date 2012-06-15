@@ -8,9 +8,9 @@ class ProverbesController < ApplicationController
   def index
      #@proverbes = Proverbe.all
      
-    if params.has_key?(:tag)   
+   if params.has_key?(:tag)   
     @proverbes = Proverbe.tagged_with(params[:tag], :on => 'tags')
-    @proverbes.paginate(:page => params[:page], :per_page => 5)
+    @proverbes =  @proverbes.paginate(:page => params[:page], :per_page => 5)
     
 else
     @proverbes = Proverbe.paginate(:page => params[:page], :per_page => 5)

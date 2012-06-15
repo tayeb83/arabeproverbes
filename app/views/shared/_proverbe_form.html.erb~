@@ -1,7 +1,28 @@
+<h1>أدخل مثل أو حكمة جديدة</h1>
+<div class="well form-inline">
 <%= form_for(@proverbe) do |f| %>
   <%= render 'shared/error_messages', :object=> f.object %>
-  <div class="field">
-    <%= f.text_area :content, :placeholder=> "أدخل مثل أو حكمة جديدة" %>
+
+   
+<div class="field">
+    <li>
+      <%= f.label :content, "المثل" %>
+      <%= f.text_area :Corps,:rows => 2 %>
+   </li>
+    <li>
+      <%= f.label :tag_names, "المواسيم" %>
+      <%= f.text_field :tag_names %>
+    </li>	
+    
+   <li>
+      <%= f.label :content, "معنى المثل" %>
+      <%= f.text_area :proverbe_sens,:rows => 3 %>
+    </li> 
+    <li>
+      <%= f.label :content, "قصة المثل" %>
+      <%= f.text_area :proverbe_histoire,:rows => 10 %>
+    </li> 	
   </div>
   <%= f.submit "أرسل", :class=> "btn btn-large btn-primary" %>
 <% end %>
+</div>

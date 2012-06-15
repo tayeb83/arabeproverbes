@@ -5,8 +5,25 @@
   <%= form_for(@proverbe) do |f| %>
       <%= render 'shared/error_messages', :object=> f.object %>
 
-       <%= f.label :"المحتوى" %>
-      <%= f.text_field :Corps %>
+<div class="field">
+    <li>
+      <%= f.label :content, "المثل" %>
+      <%= f.text_area :Corps,:rows => 2 %>
+   </li>
+    <li>
+      <%= f.label :tag_list, "المواسيم" %>
+      <%= f.text_field :tag_list %>
+    </li>	
+    
+   <li>
+      <%= f.label :content, "معنى المثل" %>
+      <%= f.text_area :proverbe_sens,:rows => 3 %>
+    </li> 
+    <li>
+      <%= f.label :content, "قصة المثل" %>
+      <%= f.text_area :proverbe_histoire,:rows => 10 %>
+    </li> 	
+  </div>
 
       <%= f.submit "حفظ التغيرات", :class=> "btn btn-large btn-primary" %>
     <% end %>

@@ -2,16 +2,28 @@
 
 <p>
 
-<b>  المحتوى : </b>
-  <%= @proverbe.Corps %>
+<h3>  المحتوى : </h3>
+</p>
+ <h4>  <%= @proverbe.Corps %><h4> 
+</p>
+<h3>  قصة المثل : </h3>
+</p>
+ <h4> <%= @proverbe.proverbe_histoire %>
+</p>
+<h3> معنى المثل : </h3>
+</p>
+<h4>  <%= @proverbe.proverbe_sens %>
+<h3>>  المسومات : </h3>
 </p>
 <% tag_cloud(@tags, %w(css1 css2 css3 css4)) do |tag, css_class| %>
-  
-  <%=  link_to tag.name, posts_path(:view =>'tag', :tag => tag.name)%>
+  <a class="btn btn-primary" href=<%= proverbes_path(:view =>'tag', :tag => tag.name)%>> <%= tag.name %></a>
 <% end %>
-
-<a href="https://twitter.com/share" class="twitter-share-button" data-text="<%= @proverbe.Corps %>" data-via=<%= @proverbe.user.username %> data-lang="fr">Tweeter</a>
+</p>
+<h3>  انشر المثل : </h3>
+</p>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url= "http://artproverbesrails1.heroku.com/proverbes/<%=@proverbe.id%>" data-text="<%= @proverbe.Corps %>" data-via=<%= @proverbe.user.username %> data-lang="ar" data-size="large">تغريد</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	
 
 <p>
 <%= raw(disqus_thread) %>

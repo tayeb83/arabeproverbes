@@ -8,7 +8,7 @@ class ProverbesController < ApplicationController
   def index
      #@proverbes = Proverbe.all
      
-    if params.has_key?(:tag)   
+   if params.has_key?(:tag)   
     @proverbes = Proverbe.tagged_with(params[:tag], :on => 'tags')
     @proverbes =  @proverbes.paginate(:page => params[:page], :per_page => 5)
     
@@ -56,8 +56,7 @@ else
 
 
   def create
-    @proverbe =  current_user.proverbes.build(params[:proverbe])
-    @proverbe.tag_list ="درر,حكم"		
+    @proverbe =  current_user.proverbes.build(params[:proverbe])		
    
    if @proverbe.save
       flash[:success] = "تم انشاء المثل"
