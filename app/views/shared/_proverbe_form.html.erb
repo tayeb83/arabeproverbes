@@ -4,25 +4,29 @@
   <%= render 'shared/error_messages', :object=> f.object %>
 
    
-<div class="field">
-    <li>
-      <%= f.label :content, "المثل" %>
-      <%= f.text_area :Corps,:rows => 2 %>
-   </li>
-    <li>
-      <%= f.label :tag_list, "المواسيم" %>
+<div id="wrapper">
+<div id="login" class="animate form">
+    <p>
+      <%= f.label :content, "المثل" %></p>
+      <%= f.text_area :Corps,:rows => 3 %>
+   </p>
+    <p>
+      <%= f.label :tag_list, "المواسيم" %></p>
       <%= f.text_field :tag_list %>
-    </li>	
+    </p>	
     
-   <li>
-      <%= f.label :content, "معنى المثل" %>
+   <p>
+      <%= f.label :content, "معنى المثل" %></p>
       <%= f.text_area :proverbe_sens,:rows => 3 %>
-    </li> 
-    <li>
-      <%= f.label :content, "قصة المثل" %>
+    </p> 
+    <p>
+      <%= f.label :content, "قصة المثل" %></p>
       <%= f.text_area :proverbe_histoire,:rows => 10 %>
-    </li> 	
-  </div>
+    </p> 	
+
+
   <%= f.submit "أرسل", :class=> "btn btn-large btn-primary" %>
 <% end %>
+</div>
+  </div>
 </div>

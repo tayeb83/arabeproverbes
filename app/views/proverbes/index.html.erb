@@ -40,8 +40,6 @@
 		<%= link_to proverbe.Corps, proverbe %>
     </p>
 
-
-  
   
 <% if proverbe.user == current_user %>
     <%= link_to "حذف", proverbe, :method =>  :delete,
@@ -57,11 +55,11 @@
 
 <%= raw(disqus_comment_counts) %>
 
-
+</p>
 
 <a href="https://twitter.com/share" class="twitter-share-button" data-url= "http://artproverbesrails1.heroku.com/proverbes/<%=proverbe.id%>" data-text="<%= proverbe.Corps %>" data-via=<%= proverbe.user.username %> data-lang="ar" data-size="large">تغريد</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-	
+</p>	
 
 </li>
 
