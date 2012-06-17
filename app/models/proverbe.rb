@@ -5,6 +5,7 @@ class Proverbe < ActiveRecord::Base
   validates :user_id, :presence=> true
   belongs_to :user
   acts_as_taggable_on :tags
+  paginates_per 5
 
  
 

@@ -2,7 +2,7 @@
 
 <p>
 
-<h3>  المحتوى : </h3>
+<h3>  المثل : </h3>
 </p>
  <h4>  <%= @proverbe.Corps %><h4> 
 </p>
@@ -13,7 +13,8 @@
 <h3> معنى المثل : </h3>
 </p>
 <h4>  <%= @proverbe.proverbe_sens %>
-<h3>>  المسومات : </h3>
+</p>
+<h3>  الأوسمة : </h3>
 </p>
 <% tag_cloud(@tags, %w(css1 css2 css3 css4)) do |tag, css_class| %>
   <a class="btn btn-primary" href=<%= proverbes_path(:view =>'tag', :tag => tag.name)%>> <%= tag.name %></a>

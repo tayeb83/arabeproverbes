@@ -39,11 +39,7 @@
     <p class="corps">
 		<%= link_to proverbe.Corps, proverbe %>
     </p>
-</p>
-<% tag_cloud(@tags, %w(css1 css2 css3 css4)) do |tag, css_class| %>
-  <a class="btn btn-primary" href=<%= proverbes_path(:view =>'tag', :tag => tag.name)%>> <%= tag.name %></a>
-<% end %>
-</p>
+
   
 <% if proverbe.user == current_user %>
     <%= link_to "حذف", proverbe, :method =>  :delete,

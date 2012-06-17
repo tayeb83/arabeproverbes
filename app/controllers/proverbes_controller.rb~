@@ -2,23 +2,26 @@
 class ProverbesController < ApplicationController
       before_filter :signed_in_user
       before_filter :correct_user,   :only=> [:destroy,:edit, :update]
-   
+   	
   # GET /proverbes
   # GET /proverbes.json
   def index
      #@proverbes = Proverbe.all
      
-   if params.has_key?(:tag)   
-    @proverbes = Proverbe.tagged_with(params[:tag], :on => 'tags')
-    @proverbes =  @proverbes.paginate(:page => params[:page], :per_page => 5)
+   if params.has_key?(:tag)  
+    @proverbes = Proverbe.tagged_with(params[:tag], :on => 'tags') 
+    @proverbes = Proverbe.order("Corps").page(params[:page])
+    
+    #@proverbes =  @proverbes.paginate(:page => params[:page], :per_page => 5)
     
 else
-    @proverbes = Proverbe.paginate(:page => params[:page], :per_page => 5)
+    @proverbes = Proverbe.order("Corps").page(params[:page])	
+    #@proverbes = Proverbe.paginate(:page => params[:page], :per_page => 5)
  end   
     respond_to do |format|
       format.html # index.html.erb
       format.json { render :json => @proverbes }
-    end
+    end	
   end
 
     
@@ -56,8 +59,7 @@ else
 
 
   def create
-    @proverbe =  current_user.proverbes.build(params[:proverbe])
-    @proverbe.tag_list ="درر,حكم"		
+    @proverbe =  current_user.proverbes.build(params[:proverbe])		
    
    if @proverbe.save
       flash[:success] = "تم انشاء المثل"

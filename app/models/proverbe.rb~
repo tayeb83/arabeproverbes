@@ -1,10 +1,11 @@
 class Proverbe < ActiveRecord::Base
  
-  attr_accessible :Corps, :tag_names, :proverbe_histoire, :proverbe_sens		
+  attr_accessible :Corps, :tag_list, :proverbe_histoire, :proverbe_sens		
   validates :Corps, :presence => true
   validates :user_id, :presence=> true
   belongs_to :user
   acts_as_taggable_on :tags
+paginates_per 5
 
  
 

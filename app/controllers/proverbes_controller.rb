@@ -9,6 +9,7 @@ class ProverbesController < ApplicationController
      #@proverbes = Proverbe.all
      
    if params.has_key?(:tag)   
+    
     @proverbes = Proverbe.tagged_with(params[:tag], :on => 'tags')
     @proverbes =  @proverbes.paginate(:page => params[:page], :per_page => 5)
     

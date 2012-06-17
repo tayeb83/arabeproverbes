@@ -9,6 +9,8 @@ gem 'devise', '1.4.7'
 
 gem 'faker', '1.0.1'
 gem 'acts-as-taggable-on', '~> 2.2.2'
+gem 'activeadmin'
+gem "country-select"
 
 
 gem 'will_paginate', '3.0.3'
