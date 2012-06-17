@@ -203,7 +203,7 @@ storage_units:
 percentage:
       format:
         delimiter: ''
-    precision:
+precision:
       format:
         delimiter: ''
 support:
