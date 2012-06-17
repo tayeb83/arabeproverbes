@@ -1,199 +1,80 @@
 ar:
-  date:
-    abbr_day_names:
-    - الأحد
-    - الإثنين
-    - الثلاثاء
-    - الأربعاء
-    - الخميس
-    - الجمعة
-    - السبت
-    abbr_month_names:
-    - 
-    - يناير
-    - فبراير
-    - مارس
-    - ابريل
-    - مايو
-    - يونيو
-    - يوليو
-    - اغسطس
-    - سبتمبر
-    - اكتوبر
-    - نوفمبر
-    - ديسمبر
-    day_names:
-    - الأحد
-    - الإثنين
-    - الثلاثاء
-    - الأربعاء
-    - الخميس
-    - الجمعة
-    - السبت
-    formats:
-      default: ! '%Y-%m-%d'
-      long: ! '%B %e, %Y'
-      short: ! '%e %b'
-    month_names:
-    - 
-    - يناير
-    - فبراير
-    - مارس
-    - ابريل
-    - مايو
-    - يونيو
-    - يوليو
-    - اغسطس
-    - سبتمبر
-    - اكتوبر
-    - نوفمبر
-    - ديسمبر
-    order:
-    - :day
-    - :month
-    - :year
-  datetime:
-    distance_in_words:
-      about_x_hours:
-        one: حوالي ساعة واحدة
-        other: ! '%{count} ساعات'
-      about_x_months:
-        one: حوالي شهر واحد
-        other: ! '%{count} أشهر'
-      about_x_years:
-        one: حوالي سنة
-        other: ! '%{count} سنوات'
-      almost_x_years:
-        one: تقريبا سنة واحدة
-        other: ما يقرب من %{count} سنة
-      half_a_minute: نصف دقيقة
-      less_than_x_minutes:
-        one: أقل من دقيقة
-        other: ! '%{count} دقائق'
-      less_than_x_seconds:
-        one: أقل من ثانية
-        other: ! '%{count} ثوان'
-      over_x_years:
-        one: أكثر من سنة
-        other: ! '%{count} سنوات'
-      x_days:
-        one: يوم واحد
-        other: ! '%{count} أيام'
-      x_minutes:
-        one: دقيقة واحدة
-        other: ! '%{count} دقائق'
-      x_months:
-        one: شهر واحد
-        other: ! '%{count} أشهر'
-      x_seconds:
-        one: ثانية واحدة
-        other: ! '%{count} ثوان'
-    prompts:
-      day: اليوم
-      hour: ساعة
-      minute: دقيقة
-      month: الشهر
-      second: ثانية
-      year: السنة
-  errors: &errors
-    format: ! '%{attribute} %{message}'
-    messages:
-      accepted: يجب أن تقبل
-      blank: فارغ، يرجى ملء الحقل
-      confirmation: لا تتوافق مع التأكيد
-      empty: فارغ، يرجى ملء الحقل
-      equal_to: يجب أن يساوي %{count}
-      even: يجب أن يكون زوجي
-      exclusion: محجوز
-      greater_than: يجب أن يكون أكبر من %{count}
-      greater_than_or_equal_to: يجب أن يكون أكبر من أو يساوي %{count}
-      inclusion: ليس خيارا مقبولا
-      invalid: غير معرف أو محدد
-      less_than: يجب أن يكون أصغر من %{count}
-      less_than_or_equal_to: يجب أن يكون أصغر من أو يساوي %{count}
-      not_a_number: ليس رقما
-      not_an_integer: يجب أن يكون صحيحا
-      odd: يجب أن يكون فردي
-      record_invalid: ! '%{errors} فشل التحقق من صحة'
-      taken: غير متوفر (مستخدم)
-      too_long: أطول من اللازم (الحد الأقصى هو %{count})
-      too_short: أقصر من اللازم (الحد الأدنى هو %{count})
-      wrong_length: بطول غير مناسب (يجب أن يكون %{count})
-    template:
-      body: ! 'يرجى التحقق من الحقول التالية:'
-      header:
-        one: ! 'ليس بالامكان حفظ %{model}: خطأ واحد.'
-        other: ! 'ليس بالامكان حفظ %{model}: %{count} أخطاء.'
-  helpers:
-    select:
-      prompt: الرجاء اختيار
-    submit:
-      create: ! '%{model} إنشاء'
-      submit: ! '%{model} حفظ'
-      update: ! '%{model} نموذج'
-  number:
-    currency:
-      format:
-        delimiter: ! ','
-        format: ! '%u%n'
-        precision: 2
-        separator: .
-        significant: false
-        strip_insignificant_zeros: false
-        unit: $
-    format:
-      delimiter: ! ','
-      precision: 3
-      separator: .
-      significant: false
-      strip_insignificant_zeros: false
-    human:
-      decimal_units:
-        format: ! '%n %u'
-        units:
-          billion: مليار
-          million: مليون
-          quadrillion: الكدريليون رقم
-          thousand: ألف
-          trillion: تريليون
-          unit: ''
-      format:
-        delimiter: ''
-        precision: 3
-        significant: true
-        strip_insignificant_zeros: true
-      storage_units:
-        format: ! '%n %u'
-        units:
-          byte:
-            one: Byte
-            other: Bytes
-          gb: GB
-          kb: KB
-          mb: MB
-          tb: TB
-    percentage:
-      format:
-        delimiter: ''
-    precision:
-      format:
-        delimiter: ''
-  support:
-    array:
-      last_word_connector: ! ', و '
-      two_words_connector: ! ' و '
-      words_connector: ! ', '
-  time:
-    am: صباحا
-    formats:
-      default: ! '%a %b %d %H:%M:%S %Z %Y'
-      long: ! '%B %d, %Y %H:%M'
-      short: ! '%d %b %H:%M'
-    pm: مساءا
-  # remove these aliases after 'activemodel' and 'activerecord' namespaces are removed from Rails repository
-  activemodel:
-    errors:
-      <<: *errors
-  activerecord:
-    errors:
-      <<: *errors
+  active_admin:
+    dashboard: Dashboard
+    dashboard_welcome:
+      welcome: "Welcome to Active Admin. This is the default dashboard page."
+      call_to_action: "To add dashboard sections, checkout 'app/admin/dashboards.rb'"
+    view: "View"
+    edit: "Edit"
+    delete: "Delete"
+    delete_confirmation: "Are you sure you want to delete this?"
+    new_model: "New %{model}"
+    create_model: "New %{model}"
+    edit_model: "Edit %{model}"
+    update_model: "Edit %{model}"
+    delete_model: "Delete %{model}"
+    details: "%{model} Details"
+    cancel: "Cancel"
+    empty: "Empty"
+    previous: "Previous"
+    next: "Next"
+    download: "Download:"
+    has_many_new: "Add New %{model}"
+    has_many_delete: "Delete"
+    filter: "Filter"
+    clear_filters: "Clear Filters"
+    search_field: "Search %{field}"
+    equal_to: "Equal To"
+    greater_than: "Greater Than"
+    less_than: "Less Than"
+    main_content: "Please implement %{model}#main_content to display content."
+    logout: "Logout"
+    sidebars:
+      filters: "Filters"
+    pagination:
+      empty: "No %{model} found"
+      one: "Displaying <b>1</b> %{model}"
+      one_page: "Displaying <b>all %{n}</b> %{model}"
+      multiple: "Displaying %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b> of <b>%{total}</b> in total"
+      entry:
+        one: "entry"
+        other: "entries"
+    any: "Any"
+    blank_slate:
+      content: "There are no %{resource_name} yet."
+      link: "Create one"
+    batch_actions:
+      button_label: "Batch Actions"
+      delete_confirmation: "Are you sure you want to delete these %{plural_model}? You won't be able to undo this."
+      succesfully_destroyed:
+        one: "Successfully destroyed 1 %{model}"
+        other: "Successfully destroyed %{count} %{plural_model}"
+      selection_toggle_explanation: "(Toggle Selection)"
+      link: "Create one"
+      action_label: "%{title} Selected"
+      labels:
+        destroy: "Delete"
+    comments:
+      body: "Body"
+      author: "Author"
+      title: "Comment"
+      add: "Add Comment"
+      resource: "Resource"
+      no_comments_yet: "No comments yet."
+      title_content: "Comments (%{count})"
+      errors:
+        empty_text: "Comment wasn't saved, text was empty."
+    devise:
+      login:
+        title: "Login"
+        remember_me: "Remember me"
+        submit: "Login"
+      reset_password:
+        title: "Forgot your password?"
+        submit: "Reset My Password"
+      change_password:
+        title: "Change your password"
+        submit: "Change my password"
+      links:
+        sign_in: "Sign in"
+        forgot_your_password: "Forgot your password?"

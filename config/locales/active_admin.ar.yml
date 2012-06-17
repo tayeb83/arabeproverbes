@@ -1,5 +1,4 @@
-ar:
-  active_admin:
+active_admin:
     dashboard: "Tableau de Bord"
     dashboard_welcome:
       welcome: "Bienvenue dans Active Admin. Ceci est la page par défaut."
