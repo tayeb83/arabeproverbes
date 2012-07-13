@@ -12,9 +12,9 @@
       <section>
         <%= render 'shared/user_info' %>
       </section>
-      <section>
-        <%= render 'shared/stats' %>
-      </section>
+      <%# <section> %>
+       <%#  <%= render 'shared/stats' %>
+      <%#  </section> %>
       <section>
         <%= render 'shared/proverbe_form' %>
       </section>
@@ -29,26 +29,21 @@
 <% else %>
 <div class="hero-unit">
 <div class="row-fluid">
-   <div class="span6">
-    <img class="aligncenter" src="/images/proverbe_logo.jpg" alt="Sample Image" width="350" height="300">
+   <div class="span4">
+    <img class="aligncenter" src="/images/proverbe_logo.jpg" alt="Sample Image" width="250" height="400">
   </div> 
-   <div class="span6">
+   <div class="span8">
 
-            <h1 class="featured-title">بوابة الأمثال و الحكم</h1>           
-            <p>بوابة الأمثال و الحكم عبارة عن مساحة تبادل بين الناس من أجل نشر و تقاسم الكثير من الأمثال و الحكم العربية و بجميع اللهجات.</p>            
-            		        
-                       
-        </div>
+            <h1 class="featured-title">بوابة الأمثال و الحكم</h1>    
+       
+            <p>
+بوابة الأمثال و الحكم عبارة عن مساحة تبادل بين الناس من أجل نشر و تقاسم الكثير من الأمثال و الحكم العربية و بجميع
+ اللهجات.
 
+ البوابة تسمح لكل العرب بنشر, تدوين و تقاسم اﻷمثال. تنفرد بوابتنا بأنها أول بوابة تتيح تدوين المثل مع إمكانية شرحه و نشر القصة التي وراء المثل. البوابة في إصدارها الأول لهذا فإن فريق العمل يرحب بإنتقداتكم و أفكاركم من أجل تطوير البوابة و جعلها رائدة في هذا المجال.
 
-   
-    <a class="btn btn-primary btn-large">
-      اقرأ المزيد
-    </a>
   </p>
 </div>
-</div>
-
  <div id="user_nav">
   <% if current_user %>
     
@@ -62,6 +57,9 @@
     <%= link_to "الدخول", new_user_session_path, :class => "btn btn-large btn-primary"%>
   <% end %>
 </div>
+</div>
+
+
 
 <% flash.each do |name, msg| %>
   <%= content_tag :div, msg, :id => "flash_#{name}" %>
