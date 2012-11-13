@@ -27,5 +27,4 @@
 <% end %>
 
 <p>مستخدم جديد؟ <%= link_to "سجل نفسك الآن!", new_user_registration_path %></p> <br />
-<p> <%= link_to link_to "Sign in with Twitter", user_omniauth_authorize_path(:twitter) %></p> <br />
 <p> <%= link_to "هل نسيت كلمت السر؟", new_user_password_path %> </p>

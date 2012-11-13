@@ -1,0 +1,12 @@
+:ar
+    will_paginate:
+        next: "suivant"
+        previous: "précédent"
+        entry:
+          one: "objet"
+          other: "objets"
+        found:
+          zero: "aucun {{entry_name}} trouvé"
+          one: "{{count}} {{entry_name}} trouvé"
+          other: "{{count}} {{entry_name}} trouvés"
+        display: "{{entry_name}} {{from}} à {{to}} sur {{total}}"
